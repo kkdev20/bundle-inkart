@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal - Website & Digital Marketing | Tattoo Studio Bali</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #000;
+        }
+        
+        .section-divider {
+            border-top: 1px solid #e5e7eb;
+            margin: 2rem 0;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        table th, table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        table th {
+            background: #f9fafb;
+            font-weight: 600;
+        }
+        
+        .highlight-box {
+            background: #f9fafb;
+            border-left: 4px solid #000;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .package-card {
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .package-card:hover {
+            border-color: #000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .package-card.featured {
+            border-color: #000;
+            background: #f9fafb;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-300 py-6">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <div class="mb-4">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-gray-600 hover:text-black transition" title="Back to Home">
+                        <i class="fas fa-arrow-left"></i>
+                        <span v-text="t('back-to-home')">Back to Home</span>
+                    </a>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-3xl font-bold text-black mb-2" v-text="t('proposal-title')">PROPOSAL</h1>
+                    <p class="text-lg text-gray-600" v-text="t('proposal-subtitle')">Website & Digital Marketing Services</p>
+                    <p class="text-sm text-gray-500 mt-1" v-text="t('proposal-location')">Tattoo Studio - 3 Cabang Bali</p>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 max-w-5xl py-8">
+            
+            <!-- Project Info -->
+            <section class="mb-8">
+                <div class="bg-white border border-gray-300 rounded p-6">
+                    <h2 class="text-xl font-bold text-black mb-4" v-text="t('project-info')">INFORMASI PROYEK</h2>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <p class="text-gray-600"><strong class="text-black" v-text="t('client-name')">Nama Klien:</strong> <span v-text="t('client-value')">Tattoo Studio (3 Cabang Bali)</span></p>
+                            <p class="text-gray-600"><strong class="text-black" v-text="t('contract-period')">Periode Kontrak:</strong> <span v-text="t('contract-value')">6 Bulan / 1 Tahun (opsional)</span></p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600"><strong class="text-black" v-text="t('proposal-date')">Tanggal Proposal:</strong> <span v-text="t('proposal-date-value')">2024</span></p>
+                            <p class="text-gray-600"><strong class="text-black" v-text="t('status')">Status:</strong> <span v-text="t('status-value')">Draft</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Executive Summary -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-black mb-4" v-text="t('executive-summary')">RINGKASAN EKSEKUTIF</h2>
+                <div class="highlight-box">
+                    <p class="text-gray-700 leading-relaxed" v-text="t('executive-summary-text')">
+                        Proposal ini mencakup pengembangan website profesional untuk 3 cabang tattoo studio di Bali dengan fitur booking system terintegrasi Google Calendar, serta layanan SEO, Social Media Management, dan Periklanan Digital untuk meningkatkan visibilitas dan konversi bisnis.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Services -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-black mb-6" v-text="t('services-offered')">LAYANAN YANG DITAWARKAN</h2>
+                
+                <!-- Website Development -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-black mb-3" v-text="t('website-development')">1. PENGEMBANGAN WEBSITE</h3>
+                    <div class="bg-white border border-gray-300 rounded p-6">
+                        <h4 class="font-semibold text-black mb-2" v-text="t('main-features')">Fitur Utama Website:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                            <li v-text="t('website-feature-1')">Multi-branch System: Website untuk 3 cabang dengan manajemen terpusat</li>
+                            <li v-text="t('website-feature-2')">Artist Profile Pages: Halaman profil untuk setiap artist dengan portfolio</li>
+                            <li v-text="t('website-feature-3')">Booking System Terintegrasi: Sistem booking real-time dengan Google Calendar</li>
+                            <li v-text="t('website-feature-4')">Portfolio Gallery: Galeri foto hasil tattoo per artist</li>
+                            <li v-text="t('website-feature-5')">Contact Forms: Formulir kontak per cabang</li>
+                            <li v-text="t('website-feature-6')">Responsive Design: Mobile-friendly untuk semua perangkat</li>
+                            <li v-text="t('website-feature-7')">Multi-language Support: Bahasa Indonesia & Inggris (opsional)</li>
+                        </ul>
+                        <h4 class="font-semibold text-black mb-2" v-text="t('timeline-development')">Timeline Pengembangan:</h4>
+                        <p class="text-gray-700" v-text="t('timeline-total')">Total: 8 minggu (2 bulan)</p>
+                    </div>
+                </div>
+                
+                <!-- SEO -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-black mb-3" v-text="t('seo-service')">2. LAYANAN SEO</h3>
+                    <div class="bg-white border border-gray-300 rounded p-6">
+                        <p class="text-gray-700 mb-4"><strong class="text-black" v-text="t('seo-goal')">Tujuan:</strong> <span v-text="t('seo-goal-text')">Meningkatkan ranking website di Google agar muncul di halaman pertama hasil pencarian, sehingga lebih banyak calon customer menemukan studio tattoo Anda secara organik (tanpa iklan berbayar).</span></p>
+                        
+                        <div class="grid md:grid-cols-3 gap-4 text-sm mb-4">
+                            <div>
+                                <h4 class="font-semibold text-black mb-2" v-text="t('on-page-seo')">On-Page SEO</h4>
+                                <p class="text-gray-700 mb-2" v-text="t('on-page-seo-desc')">Optimasi konten & struktur website:</p>
+                                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                    <li v-text="t('on-page-seo-1')">Meta tags, title, description</li>
+                                    <li v-text="t('on-page-seo-2')">Optimasi gambar & URL</li>
+                                    <li v-text="t('on-page-seo-3')">Internal linking</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-black mb-2" v-text="t('off-page-seo')">Off-Page SEO</h4>
+                                <p class="text-gray-700 mb-2" v-text="t('off-page-seo-desc')">Membangun otoritas website:</p>
+                                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                    <li v-text="t('off-page-seo-1')">Link building (5-10 backlinks/bulan)</li>
+                                    <li v-text="t('off-page-seo-2')">Local SEO (Google Business)</li>
+                                    <li v-text="t('off-page-seo-3')">Directory submissions</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-black mb-2" v-text="t('technical-seo')">Technical SEO</h4>
+                                <p class="text-gray-700 mb-2" v-text="t('technical-seo-desc')">Optimasi teknis website:</p>
+                                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                    <li v-text="t('technical-seo-1')">Sitemap, robots.txt</li>
+                                    <li v-text="t('technical-seo-2')">Page speed optimization</li>
+                                    <li v-text="t('technical-seo-3')">Analytics & tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded text-sm">
+                            <p class="text-black font-semibold mb-1" v-text="t('seo-expected-results')">Hasil yang Diharapkan:</p>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li v-text="t('seo-result-1')">Website muncul di halaman 1 Google untuk keyword "tattoo bali", "tattoo studio uluwatu", dll</li>
+                                <li v-text="t('seo-result-2')">Traffic organik meningkat (calon customer menemukan website tanpa iklan)</li>
+                                <li v-text="t('seo-result-3')">Booking meningkat dari pencarian Google</li>
+                                <li v-text="t('seo-result-4')">Monthly SEO report dengan tracking keyword ranking & traffic</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-black mb-3" v-text="t('social-media')">3. SOCIAL MEDIA MANAGEMENT</h3>
+                    <div class="bg-white border border-gray-300 rounded p-6">
+                        <div class="highlight-box mb-4">
+                            <p class="text-gray-700 text-sm"><strong class="text-black" v-text="t('smm-note')">Catatan:</strong> <span v-text="t('smm-note-text')">Kami hanya melakukan posting konten. Desain/gambar/video disediakan oleh client. Kami akan posting sesuai jadwal yang telah disepakati.</span></p>
+                        </div>
+                        <p class="text-gray-700 mb-3"><strong class="text-black" v-text="t('smm-platform')">Platform:</strong> <span v-text="t('smm-platform-value')">Instagram, Facebook, TikTok (opsional), Google Business Profile</span></p>
+                        <p class="text-gray-700 mb-3"><strong class="text-black" v-text="t('smm-services')">Layanan:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm mb-3">
+                            <li v-text="t('smm-service-1')">Posting konten yang disediakan client (15-20 posts per bulan per platform)</li>
+                            <li v-text="t('smm-service-2')">Daily stories update (jika konten tersedia)</li>
+                            <li v-text="t('smm-service-3')">Response to comments & DMs</li>
+                            <li v-text="t('smm-service-4')">Community management</li>
+                            <li v-text="t('smm-service-5')">Hashtag research & optimization</li>
+                            <li v-text="t('smm-service-6')">Monthly SMM report</li>
+                        </ul>
+                        <p class="text-gray-700 text-sm"><strong class="text-black" v-text="t('smm-not-included')">Tidak termasuk:</strong> <span v-text="t('smm-not-included-text')">Desain konten, photography, videography (disediakan oleh client)</span></p>
+                    </div>
+                </div>
+                
+                <!-- Digital Advertising -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-black mb-3" v-text="t('digital-advertising')">4. PERIKLANAN DIGITAL</h3>
+                    <div class="bg-white border border-gray-300 rounded p-6">
+                        <div class="highlight-box mb-4">
+                            <p class="text-gray-700 text-sm"><strong class="text-black" v-text="t('ads-note')">Catatan:</strong> <span v-text="t('ads-note-text')">Kami hanya melakukan management campaign. Desain kreatif iklan dan budget iklan (dibayar langsung ke platform) disediakan/dibayar oleh client sendiri.</span></p>
+                        </div>
+                        <p class="text-gray-700 mb-3"><strong class="text-black" v-text="t('ads-services-included')">Layanan yang termasuk:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm mb-3">
+                            <li v-text="t('ads-service-1')">Campaign setup & strategy</li>
+                            <li v-text="t('ads-service-2')">Account setup (Google Ads, Facebook Ads)</li>
+                            <li v-text="t('ads-service-3')">Campaign management & optimization</li>
+                            <li v-text="t('ads-service-4')">Budget management (menggunakan budget dari client)</li>
+                            <li v-text="t('ads-service-5')">A/B testing</li>
+                            <li v-text="t('ads-service-6')">Performance monitoring</li>
+                            <li v-text="t('ads-service-7')">Tracking & conversion setup</li>
+                            <li v-text="t('ads-service-8')">Monthly ads performance report</li>
+                        </ul>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm mt-4">
+                            <div>
+                                <h4 class="font-semibold text-black mb-2" v-text="t('google-ads')">Google Ads</h4>
+                                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                    <li v-text="t('google-ads-1')">Google Search Ads</li>
+                                    <li v-text="t('google-ads-2')">Google Display Ads</li>
+                                    <li v-text="t('google-ads-3')">Google Local Ads</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-black mb-2" v-text="t('social-media-ads')">Social Media Ads</h4>
+                                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                    <li v-text="t('social-ads-1')">Instagram/Facebook Ads</li>
+                                    <li v-text="t('social-ads-2')">Targeted campaigns</li>
+                                    <li v-text="t('social-ads-3')">Retargeting campaigns</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mt-4 text-sm"><strong class="text-black" v-text="t('ads-not-included')">Tidak termasuk:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                            <li v-text="t('ads-not-included-1')">Desain kreatif iklan (disediakan oleh client)</li>
+                            <li v-text="t('ads-not-included-2')">Budget iklan (dibayar langsung oleh client ke platform iklan)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Photography & Videography -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-black mb-3" v-text="t('photo-video')">5. LAYANAN FOTO & VIDEO</h3>
+                    <div class="bg-white border border-gray-300 rounded p-6">
+                        <div class="highlight-box mb-4">
+                            <p class="text-gray-700 text-sm"><strong class="text-black" v-text="t('photo-video-price')">Harga per kunjungan:</strong> <span v-text="t('photo-video-price-value')">Rp 1.250.000 (foto & video)</span></p>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-3"><strong class="text-black" v-text="t('services-included')">Layanan yang termasuk:</strong></p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm mb-4">
+                            <li><strong class="text-black" v-text="t('photo')">Foto:</strong> <span v-text="t('photo-value')">Foto edited all in (unlimited)</span></li>
+                            <li><strong class="text-black" v-text="t('video')">Video:</strong> <span v-text="t('video-value')">Video reel portrait 1 menit sampai 1.30 menit</span></li>
+                            <li><strong class="text-black" v-text="t('quantity')">Kuantitas:</strong> <span v-text="t('quantity-value')">4 video per bulan, total foto unlimited</span></li>
+                            <li><strong class="text-black" v-text="t('attendance')">Kehadiran:</strong> <span v-text="t('attendance-value')">4 kali per bulan</span></li>
+                            <li><strong class="text-black" v-text="t('include')">Include:</strong> <span v-text="t('include-value')">All gears (camera, lens, lighting) dan editing</span></li>
+                        </ul>
+                        
+                        <div class="bg-gray-50 p-4 rounded text-sm">
+                            <p class="text-black font-semibold mb-2" v-text="t('package-summary')">Ringkasan Paket:</p>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li v-text="t('total-video')">Total video: 4 buah per bulan</li>
+                                <li v-text="t('total-photo')">Total foto: Unlimited (edited all in)</li>
+                                <li v-text="t('attendance-summary')">Kehadiran: 4 kali per bulan</li>
+                                <li v-text="t('include-summary')">Include all gears (camera, lens, lighting) dan editing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Pricing Packages -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-black mb-6" v-text="t('pricing-packages')">PAKET HARGA</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <!-- Package 6 Months -->
+                    <div class="package-card bg-white rounded p-6">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl font-bold text-black" v-text="t('package-6-months')">PAKET 6 BULAN</h3>
+                            <p class="text-3xl font-bold text-black mt-2" v-text="t('package-6-price')">Rp 78.500.000</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <table class="text-sm">
+                                <thead>
+                                    <tr>
+                                        <th v-text="t('table-item')">Item</th>
+                                        <th v-text="t('table-price')">Harga</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td v-text="t('item-website-dev')">Website Development</td>
+                                        <td v-text="t('item-website-dev-price')">Rp 10.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-calendar')">Google Calendar Integration</td>
+                                        <td v-text="t('item-calendar-price')">Rp 5.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-hosting-1')">Hosting & Domain (1 tahun)</td>
+                                        <td v-text="t('item-hosting-price')">Rp 2.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-ssl-1')">SSL Certificate</td>
+                                        <td v-text="t('item-ssl-price-1')">Rp 500.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-maintenance-6')">Maintenance (6 bulan)</td>
+                                        <td v-text="t('item-maintenance-6-price')">Rp 6.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-seo-6')">SEO Setup & Service</td>
+                                        <td v-text="t('item-seo-6-price')">Rp 35.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-smm-6')">SMM Setup & Service</td>
+                                        <td v-text="t('item-smm-6-price')">Rp 10.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-ads-6')">Ads Setup & Management</td>
+                                        <td v-text="t('item-ads-6-price')">Rp 10.000.000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded text-sm">
+                            <p class="text-black font-semibold mb-2" v-text="t('payment')">Pembayaran:</p>
+                            <p class="text-gray-700"><span v-text="t('down-payment')">Down Payment:</span> <strong class="text-black" v-text="t('down-payment-6')">Rp 30.000.000</strong></p>
+                            <p class="text-gray-700"><span v-text="t('installment')">Cicilan</span> (6x): <strong class="text-black" v-text="t('installment-6')">Rp 8.083.333</strong><span v-text="t('per-month')">/bulan</span></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Package 1 Year -->
+                    <div class="package-card featured bg-white rounded p-6">
+                        <div class="text-center mb-4">
+                            <span class="bg-black text-white text-xs px-2 py-1 rounded mb-2 inline-block" v-text="t('recommended')">RECOMMENDED</span>
+                            <h3 class="text-xl font-bold text-black" v-text="t('package-1-year')">PAKET 1 TAHUN</h3>
+                            <p class="text-3xl font-bold text-black mt-2" v-text="t('package-1-year-price')">Rp 99.530.000</p>
+                            <p class="text-sm text-gray-600 mt-1" v-text="t('save-amount')">Hemat Rp 17.770.000 (Diskon 15%)</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <table class="text-sm">
+                                <thead>
+                                    <tr>
+                                        <th v-text="t('table-item')">Item</th>
+                                        <th v-text="t('table-price')">Harga</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td v-text="t('item-website-dev')">Website Development</td>
+                                        <td v-text="t('item-website-dev-price')">Rp 10.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-calendar')">Google Calendar Integration</td>
+                                        <td v-text="t('item-calendar-price')">Rp 5.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-hosting-12')">Hosting & Domain (12 bulan)</td>
+                                        <td v-text="t('item-hosting-price')">Rp 2.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-ssl-1')">SSL Certificate</td>
+                                        <td v-text="t('item-ssl-price-12')">Rp 1.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-maintenance-12')">Maintenance (12 bulan)</td>
+                                        <td v-text="t('item-maintenance-12-price')">Rp 10.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-seo-12')">SEO Setup & Service</td>
+                                        <td v-text="t('item-seo-12-price')">Rp 56.000.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-smm-12')">SMM Setup & Service</td>
+                                        <td v-text="t('item-smm-12-price')">Rp 15.600.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td v-text="t('item-ads-12')">Ads Setup & Management</td>
+                                        <td v-text="t('item-ads-12-price')">Rp 15.600.000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded text-sm">
+                            <p class="text-black font-semibold mb-2" v-text="t('payment')">Pembayaran:</p>
+                            <p class="text-gray-700"><span v-text="t('down-payment')">Down Payment:</span> <strong class="text-black" v-text="t('down-payment-12')">Rp 40.000.000</strong></p>
+                            <p class="text-gray-700"><span v-text="t('installment')">Cicilan</span> (12x): <strong class="text-black" v-text="t('installment-12')">Rp 4.960.833</strong><span v-text="t('per-month')">/bulan</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- What You Get -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-black mb-4" v-text="t('what-you-get')">YANG AKAN DITERIMA KLIEN</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white border border-gray-300 rounded p-6">
+                        <h3 class="text-lg font-bold text-black mb-3" v-text="t('development-phase')">TAHAP PENGEMBANGAN (Bulan 1-2)</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+                            <li v-text="t('dev-phase-1')">Website profesional untuk 3 cabang</li>
+                            <li v-text="t('dev-phase-2')">Domain & hosting aktif</li>
+                            <li v-text="t('dev-phase-3')">SSL certificate terpasang</li>
+                            <li v-text="t('dev-phase-4')">Booking system berfungsi</li>
+                            <li v-text="t('dev-phase-5')">Integrasi Google Calendar aktif</li>
+                            <li v-text="t('dev-phase-6')">Training & dokumentasi</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-300 rounded p-6">
+                        <h3 class="text-lg font-bold text-black mb-3" v-text="t('operational-phase')">TAHAP OPERASIONAL (Bulan 3-6/12)</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+                            <li v-text="t('op-phase-1')">Layanan SEO bulanan</li>
+                            <li v-text="t('op-phase-2')">Social Media Management</li>
+                            <li v-text="t('op-phase-3')">Digital Advertising campaigns</li>
+                            <li v-text="t('op-phase-4')">Monthly reports</li>
+                            <li v-text="t('op-phase-5')">Support & maintenance</li>
+                            <li v-text="t('op-phase-6')">Technical support 24/7</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SEO Timeline Detail -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-black mb-4" v-text="t('seo-timeline')">TIMELINE SEO (DIMULAI BULAN 2)</h2>
+                <div class="bg-white border border-gray-300 rounded p-6">
+                    <div class="highlight-box mb-4">
+                        <p class="text-gray-700 text-sm"><strong class="text-black" v-text="t('seo-timeline-note')">Catatan:</strong> <span v-text="t('seo-timeline-note-text')">SEO dimulai di Bulan 2 setelah website selesai dikembangkan. Client akan menerima layanan SEO selama 5 bulan (Bulan 2-6 untuk paket 6 bulan, atau Bulan 2-12 untuk paket 1 tahun).</span></p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-black mb-3" v-text="t('seo-month-2')">BULAN 2: SEO SETUP & OPTIMIZATION</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm mb-4">
+                                <li><strong class="text-black" v-text="t('seo-month-2-1')">SEO Audit:</strong> <span v-text="t('seo-month-2-1-text')">Analisis website lengkap</span></li>
+                                <li><strong class="text-black" v-text="t('seo-month-2-2')">Keyword Research:</strong> <span v-text="t('seo-month-2-2-text')">Daftar keyword target</span></li>
+                                <li><strong class="text-black" v-text="t('seo-month-2-3')">On-page Optimization:</strong> <span v-text="t('seo-month-2-3-text')">Optimasi meta tags, title, description</span></li>
+                                <li><strong class="text-black" v-text="t('seo-month-2-4')">Technical SEO:</strong> <span v-text="t('seo-month-2-4-text')">Sitemap, robots.txt, schema markup</span></li>
+                                <li><strong class="text-black" v-text="t('seo-month-2-5')">Deliverables:</strong> <span v-text="t('seo-month-2-5-text')">SEO audit report, keyword list, optimized website</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-black mb-3" v-text="t('seo-month-3-6')">BULAN 3-6: SEO MONTHLY SERVICE</h3>
+                            <p class="text-gray-700 text-sm mb-2"><strong class="text-black" v-text="t('seo-monthly-desc')">Setiap bulan client akan menerima:</strong></p>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+                                <li><strong class="text-black" v-text="t('seo-monthly-1')">On-page Optimization:</strong> <span v-text="t('seo-monthly-1-text')">Update konten, optimasi halaman</span></li>
+                                <li><strong class="text-black" v-text="t('seo-monthly-2')">Off-page SEO:</strong> <span v-text="t('seo-monthly-2-text')">5-10 backlink building per bulan</span></li>
+                                <li><strong class="text-black" v-text="t('seo-monthly-3')">Content Optimization:</strong> <span v-text="t('seo-monthly-3-text')">Optimasi konten existing</span></li>
+                                <li><strong class="text-black" v-text="t('seo-monthly-4')">Technical SEO:</strong> <span v-text="t('seo-monthly-4-text')">Maintenance & monitoring</span></li>
+                                <li><strong class="text-black" v-text="t('seo-monthly-5')">Monthly SEO Report:</strong> <span v-text="t('seo-monthly-5-text')">Keyword ranking, traffic analysis, recommendations</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Timeline -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-black mb-4" v-text="t('timeline-deliverables')">TIMELINE & DELIVERABLES</h2>
+                <div class="bg-white border border-gray-300 rounded p-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-black mb-2" v-text="t('timeline-month-1-2')">BULAN 1-2: PENGEMBANGAN</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                <li v-text="t('timeline-week-1-2')">Week 1-2: Design & Planning</li>
+                                <li v-text="t('timeline-week-3-4')">Week 3-4: Development</li>
+                                <li v-text="t('timeline-week-5-6')">Week 5-6: Integration & Testing</li>
+                                <li v-text="t('timeline-week-7-8')">Week 7-8: Launch & Training</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-black mb-2" v-text="t('timeline-month-2-6')">BULAN 2-6/12: OPERASIONAL</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                                <li><strong v-text="t('timeline-month-2')">Bulan 2:</strong> <span v-text="t('timeline-month-2-text')">SEO Setup & Optimization</span></li>
+                                <li><strong v-text="t('timeline-month-3-6')">Bulan 3-6:</strong> <span v-text="t('timeline-month-3-6-text')">SEO monthly service + reports</span></li>
+                                <li v-text="t('timeline-other-1')">Social media content & management</li>
+                                <li v-text="t('timeline-other-2')">Digital advertising campaigns</li>
+                                <li v-text="t('timeline-other-3')">Monthly reports & meetings</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Benefits -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-black mb-4" v-text="t('benefits')">KEUNTUNGAN PAKET INI</h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white border border-gray-300 rounded p-4">
+                        <i class="fas fa-check-circle text-black text-2xl mb-2"></i>
+                        <h4 class="font-semibold text-black mb-2" v-text="t('benefit-1-title')">All-in-One Solution</h4>
+                        <p class="text-sm text-gray-700" v-text="t('benefit-1-desc')">Website + SEO + SMM + Ads dalam satu paket</p>
+                    </div>
+                    <div class="bg-white border border-gray-300 rounded p-4">
+                        <i class="fas fa-dollar-sign text-black text-2xl mb-2"></i>
+                        <h4 class="font-semibold text-black mb-2" v-text="t('benefit-2-title')">Cost Effective</h4>
+                        <p class="text-sm text-gray-700" v-text="t('benefit-2-desc')">Lebih hemat dibanding hire multiple vendors</p>
+                    </div>
+                    <div class="bg-white border border-gray-300 rounded p-4">
+                        <i class="fas fa-chart-line text-black text-2xl mb-2"></i>
+                        <h4 class="font-semibold text-black mb-2" v-text="t('benefit-3-title')">Data-Driven</h4>
+                        <p class="text-sm text-gray-700" v-text="t('benefit-3-desc')">Analytics & reporting untuk decision making</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Important Notes -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-black mb-4" v-text="t('important-notes')">CATATAN PENTING</h2>
+                <div class="bg-white border border-gray-300 rounded p-6">
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 text-sm">
+                        <li><strong class="text-black" v-text="t('important-note-1')">SMM (Social Media Management):</strong> <span v-text="t('important-note-1-text')">Kami hanya melakukan posting konten. Desain/gambar/video untuk posting disediakan oleh client. Kami akan posting sesuai jadwal yang telah disepakati.</span></li>
+                        <li><strong class="text-black" v-text="t('important-note-2')">Ads Management:</strong> <span v-text="t('important-note-2-text')">Kami hanya melakukan management campaign. Desain kreatif iklan dan budget iklan (dibayar langsung ke platform) disediakan/dibayar oleh client sendiri.</span></li>
+                        <li><strong class="text-black" v-text="t('important-note-3')">Konten Foto/Video:</strong> <span v-text="t('important-note-3-text')">Semua konten untuk SMM dan Ads disediakan oleh client</span></li>
+                        <li><strong class="text-black" v-text="t('important-note-4')">Domain & Hosting:</strong> <span v-text="t('important-note-4-text')">Renewal tahun berikutnya dengan harga normal</span></li>
+                        <li><strong class="text-black" v-text="t('important-note-5')">Additional Features:</strong> <span v-text="t('important-note-5-text')">Fitur tambahan bisa dinegosiasikan dengan biaya terpisah</span></li>
+                        <li><strong class="text-black" v-text="t('important-note-6')">Revisi Design:</strong> <span v-text="t('important-note-6-text')">Maksimal 3x revisi untuk design website</span></li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Guarantee -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-black mb-4" v-text="t('guarantee-support')">GARANSI & SUPPORT</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white border border-gray-300 rounded p-4">
+                        <h4 class="font-semibold text-black mb-2" v-text="t('guarantee-1-title')">Website Uptime</h4>
+                        <p class="text-sm text-gray-700" v-text="t('guarantee-1-desc')">99.9% uptime guarantee</p>
+                    </div>
+                    <div class="bg-white border border-gray-300 rounded p-4">
+                        <h4 class="font-semibold text-black mb-2" v-text="t('guarantee-2-title')">Response Time</h4>
+                        <p class="text-sm text-gray-700" v-text="t('guarantee-2-desc')">Maksimal 24 jam untuk support requests</p>
+                    </div>
+                    <div class="bg-white border border-gray-300 rounded p-4">
+                        <h4 class="font-semibold text-black mb-2" v-text="t('guarantee-3-title')">Bug Fixes</h4>
+                        <p class="text-sm text-gray-700" v-text="t('guarantee-3-desc')">Gratis selama periode kontrak</p>
+                    </div>
+                    <div class="bg-white border border-gray-300 rounded p-4">
+                        <h4 class="font-semibold text-black mb-2" v-text="t('guarantee-4-title')">Backup</h4>
+                        <p class="text-sm text-gray-700" v-text="t('guarantee-4-desc')">Daily automated backups</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Next Steps -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-black mb-4" v-text="t('next-steps')">NEXT STEPS</h2>
+                <div class="bg-white border border-gray-300 rounded p-6">
+                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                        <li v-text="t('next-step-1')">Review proposal ini</li>
+                        <li v-text="t('next-step-2')">Pilih paket (6 bulan atau 1 tahun)</li>
+                        <li v-text="t('next-step-3')">Meeting untuk diskusi detail</li>
+                        <li v-text="t('next-step-4')">Sign kontrak & down payment</li>
+                        <li v-text="t('next-step-5')">Kick-off meeting & project start</li>
+                    </ol>
+                </div>
+            </section>
+            
+            <!-- Contact -->
+            <section class="mb-8">
+                <div class="bg-black text-white rounded p-6 text-center">
+                    <h2 class="text-xl font-bold mb-4" v-text="t('contact-questions')">KONTAK UNTUK PERTANYAAN</h2>
+                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                        <div>
+                            <i class="fas fa-envelope text-2xl mb-2"></i>
+                            <p v-text="t('email')">Email</p>
+                            <p class="text-gray-300">info@rancangrinakit.com</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone text-2xl mb-2"></i>
+                            <p v-text="t('whatsapp')">WhatsApp</p>
+                            <p class="text-gray-300">+62 817-2888-30</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-globe text-2xl mb-2"></i>
+                            <p v-text="t('website')">Website</p>
+                            <p class="text-gray-300">rancangrinakit.com</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-300 py-4 mt-8">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-xs text-gray-600">&copy; 2024 INK Tattoo Studio. <span v-text="t('footer-note')">Proposal ini berlaku selama 30 hari sejak tanggal diterbitkan.</span></p>
+            </div>
+        </footer>
+        
+        <!-- Language Toggle Button -->
+        <button 
+            @click="toggleLanguage" 
+            class="fixed top-4 right-4 z-50 bg-black text-white px-3 py-2 rounded-lg shadow-lg hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 text-sm font-medium"
+            style="min-width: 60px;">
+            <i class="fas fa-globe text-xs"></i>
+            <span>{{ currentLang === 'id' ? 'ID' : 'EN' }}</span>
+        </button>
+    </div>
+    
+    <script src="js/language-toggle.js"></script>
+    <script src="js/templates/template-8.js"></script>
+</body>
+</html>
+
